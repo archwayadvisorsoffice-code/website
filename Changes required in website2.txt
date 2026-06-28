@@ -1,0 +1,7 @@
+After copying the files, start editing the website for archway, in the new website i want only folowing changes:-
+  1. change the logo of the website and use "logo2" in "website_archway" folder
+  2. Add key people detail on the website of archway, photo of the key people are saved as their name in the folder and text file contains their
+  designation and role detai.
+  3. Since we have changed logo, replace the comppany name and edit the content of webiste from "Volumus Global Services private limited" to
+  Archway Eco-fintech Private Limited", address would be - SCO 126,2nd floor,  world street, sector 77, faridabad, haryana, india, - 121004
+  4. Change the colour pallete according to logo of the company "Archway"

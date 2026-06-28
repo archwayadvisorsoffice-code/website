@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}{{ country.name }} — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Archway Eco-Fintech delivers specialist assurance, tax, M&A advisory, and compliance services in {{ country.name }}. Expert local knowledge with global standards.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero" style="background:{{ country.gradient }};">
+  <div class="page-hero__bg" aria-hidden="true" style="background:none;"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" style="color:rgba(255,255,255,0.65);">Home</a>
+        <span class="breadcrumb__sep" style="color:rgba(255,255,255,0.4);">›</span>
+        <a href="/countries" style="color:rgba(255,255,255,0.65);">Markets</a>
+        <span class="breadcrumb__sep" style="color:rgba(255,255,255,0.4);">›</span>
+        <span style="color:var(--white);">{{ country.name }}</span>
+      </nav>
+      <h1 class="page-hero__title">{{ country.name }}</h1>
+      <p class="page-hero__sub">Specialist professional services — assurance, tax, advisory, and compliance — delivered with deep local knowledge and global standards.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Overview -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:start;gap:5rem;">
+      <div class="reveal">
+        <span class="overline">Market Overview</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Operating in {{ country.name }}</h2>
+        <p style="color:var(--text-secondary);line-height:1.85;margin-top:1rem;">{{ country.overview }}</p>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Speak to Our {{ country.name }} Team</a>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy-700);margin-bottom:1.25rem;">Key Services in {{ country.name }}</h3>
+          <div style="display:flex;flex-direction:column;gap:0.65rem;">
+            {% for svc in country.key_services %}
+            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid var(--border);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span style="font-size:0.875rem;font-weight:500;color:var(--navy-700);">{{ svc }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Regulators -->
+<section class="section section--subtle">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Regulatory Landscape</span>
+      <h2 class="h2">Key Regulatory Bodies in {{ country.name }}</h2>
+      <p class="lead">Understanding the regulators — their mandates, enforcement style, and compliance requirements — is central to operating successfully in {{ country.name }}.</p>
+    </div>
+    <div class="grid grid--3">
+      {% for abbr, desc in country.regulators %}
+      <div class="service-card reveal reveal--d{{ loop.index % 3 + 1 }}">
+        <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--green);margin-bottom:0.5rem;letter-spacing:-0.01em;">{{ abbr }}</div>
+        <p class="service-card__desc">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Investment -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="overline">Investment Environment</span>
+      <h2 class="h2" style="margin-top:0.75rem;">Entering {{ country.name }} as an Investor</h2>
+      <p style="color:var(--text-secondary);line-height:1.85;margin-top:1rem;font-size:1.05rem;">{{ country.investment }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Insight -->
+<section class="section section--subtle">
+  <div class="container">
+    <div style="background:var(--white);border-radius:var(--radius-xl);padding:3rem;border:1px solid var(--border);box-shadow:var(--shadow-md);text-align:center;" class="reveal">
+      <span class="overline">Archway Insight</span>
+      <h2 class="h3" style="margin-top:0.5rem;color:var(--navy-700);">Expert Analysis on {{ country.name }}</h2>
+      <p style="color:var(--text-secondary);margin-top:0.75rem;max-width:480px;margin-inline:auto;">Read our specialist commentary on the regulatory, tax, and business developments shaping {{ country.name }}.</p>
+      <a href="/blog/{{ country.blog_slug }}" class="btn btn--primary" style="margin-top:1.5rem;">{{ country.blog_label }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Ready to Operate in {{ country.name }}?</h2>
+      <p class="cta-band__sub">Our {{ country.name }} specialists provide end-to-end support — from initial market entry through to ongoing compliance, advisory, and growth.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Request for Proposal</a>
+        <a href="/services" class="btn btn--outline-white btn--lg">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

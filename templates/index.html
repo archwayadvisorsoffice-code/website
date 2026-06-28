@@ -1,0 +1,394 @@
+{% extends "base.html" %}
+{% block title %}Archway Eco-Fintech — Assurance, Tax, M&A &amp; Advisory{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" aria-label="Hero">
+  <!-- Bokeh background circles — navy + green palette -->
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;">
+    <div style="position:absolute;width:700px;height:700px;background:#1B3D7B;border-radius:50%;top:-260px;left:-200px;filter:blur(130px);opacity:0.60;"></div>
+    <div style="position:absolute;width:480px;height:480px;background:#0D2147;border-radius:50%;top:30%;right:-140px;filter:blur(115px);opacity:0.55;"></div>
+    <div style="position:absolute;width:380px;height:380px;background:#4D8A2B;border-radius:50%;bottom:-80px;left:38%;filter:blur(100px);opacity:0.22;"></div>
+    <div style="position:absolute;width:300px;height:300px;background:#6BBE3F;border-radius:50%;bottom:8%;left:8%;filter:blur(90px);opacity:0.18;"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero__inner">
+
+      <!-- Left: eyebrow + heading -->
+      <div style="position:relative;z-index:2;">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Trusted across 7 countries &amp; growing
+        </div>
+        <h1 class="hero__title">
+          Global Advisory<br>Built on <em>Expertise</em><br>&amp; Technology.
+        </h1>
+      </div>
+
+      <!-- Right: sub-text + pills -->
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;">
+        <p class="hero__sub" style="margin-bottom:1.5rem;">
+          An India-based global advisory firm — bringing together accounting, taxation, compliance, corporate advisory, software engineering, and data science to deliver reliable, scalable support for businesses worldwide.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.55rem;">
+          {% for pt in [
+            '15+ Years of Experience',
+            'One-Stop Advisory Firm',
+            '7 Global Markets',
+            'Technology + Expertise',
+            'Startups to Multinationals',
+            'Accessible · Accountable · Delivered'
+          ] %}
+          <span style="display:inline-flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.16);border-radius:99px;padding:0.38rem 0.95rem;backdrop-filter:blur(4px);">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--green-light);flex-shrink:0;display:inline-block;"></span>
+            <span style="font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.88);">{{ pt }}</span>
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><div class="hero__scroll-bar"></div></div>
+</section>
+
+<!-- ═══════════════ CREDIBILITY STRIP ═══════════════ -->
+<div class="cred-strip">
+  <div class="container">
+    <div class="cred-strip__inner">
+      <span class="cred-strip__label">Trusted for</span>
+      <div class="cred-strip__items">
+        {% for item in [
+          ('Statutory Audit', 'M'),
+          ('Cross-Border Tax', 'T'),
+          ('M&A Due Diligence', 'A'),
+          ('Digital Transformation', 'D'),
+          ('Global Expansion', 'G'),
+          ('BPO &amp; Outsourcing', 'B')
+        ] %}
+        <div class="cred-strip__item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          {{ item[0] }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="section section--white" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <span class="section-label">What We Do</span>
+      <h2 class="h2" id="services-heading" style="color:var(--navy);">Comprehensive Solutions for Global Business</h2>
+      <p class="lead" style="margin-top:1rem;">We provide the full spectrum of professional services — from assurance and audit to digital transformation and global expansion.</p>
+    </div>
+
+    <div class="svc-carousel-wrap">
+      <button class="svc-carousel__btn svc-carousel__btn--prev" id="svcPrev" aria-label="Previous services">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="svc-carousel" id="svcCarousel">
+        <div class="svc-carousel__track" id="svcTrack">
+          {% set svcs = [
+            ('audit',      'Assurance &amp; Audit',            'Independent, high-quality assurance that strengthens confidence among management, owners, lenders, and regulators — combining technical rigour with practical commercial understanding.',
+             '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'),
+            ('accounting', 'Accounting &amp; Bookkeeping',     'Clean, timely, and reliable financial records that support compliance, reporting, and decision-making — from foundational bookkeeping to management accounts across multi-jurisdictional operations.',
+             '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>'),
+            ('tax',        'Tax Advisory &amp; Compliance',    'Tax registrations, return filing, compliance, and cross-border advisory — helping businesses manage obligations across multiple jurisdictions with clarity, discipline, and reduced risk.',
+             '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'),
+            ('ma',         'M&amp;A and Corporate Advisory', 'Advisory support for acquisitions, divestments, due diligence, valuation, and restructuring — helping businesses navigate complex transactions with insight and commercially sound execution.',
+             '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'),
+            ('digital',    'Data Analytics and Digital Consulting',    'Turning data into insight through dashboards, reporting automation, and process digitization — with data scientists and engineers embedded alongside our finance and advisory teams.',
+             '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>'),
+            ('governance', 'Governance &amp; Compliance',      'Compliance calendars, secretarial support, statutory filings, and governance frameworks — helping businesses meet regulatory obligations and operate with accountability and control.',
+             '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+            ('outsourcing','Business Process Outsourcing',     'Finance, compliance, accounting, and back-office functions delivered as a managed service — enabling businesses to focus on growth while we provide reliable, scalable operational support.',
+             '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'),
+            ('expansion',  'Global Expansion Advisory',       'Entering a new country requires more than registration — it involves labour law compliance, payroll setup, accounting processes, tax registrations, and ongoing statutory obligations. We help you expand with structure and compliance.',
+             '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'),
+            ('payroll',    'Payroll Services',                 'Precise, confidential, and fully compliant payroll processing across multiple jurisdictions — managing tax withholdings, statutory contributions, payroll reconciliations, and compliance calendars for businesses of every size.',
+             '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>')
+          ] %}
+          {% for anchor, title, desc, icon_path in svcs %}
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{{ icon_path | safe }}</svg>
+            </div>
+            <h3 class="service-card__title">{{ title | safe }}</h3>
+            <p class="service-card__desc">{{ desc }}</p>
+            <div class="service-card__footer">
+              <a href="/services#{{ anchor }}" class="service-card__link">
+                Learn more
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <div class="btn-arrow" style="width:32px;height:32px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <button class="svc-carousel__btn svc-carousel__btn--next" id="svcNext" aria-label="Next services">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="svc-carousel__dots" id="svcDots"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ WORLD MAP ═══════════════ -->
+<section style="background:var(--white);padding-block:5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-label="Global presence">
+  <div class="container">
+    <div class="section-header section-header--center reveal" style="margin-bottom:2.5rem;">
+      <span class="section-label">Our Global Footprint</span>
+      <h2 class="h2" style="color:var(--navy);">Where We Operate</h2>
+      <p style="color:var(--text-secondary);margin-top:0.75rem;max-width:560px;margin-inline:auto;font-size:1rem;line-height:1.7;">Deep local knowledge across seven key markets, delivering specialist advice with the standards of a world-class firm.</p>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <img src="{{ url_for('static', filename='img/Countries_map.jpeg') }}" alt="Archway — Seven Markets: India, Australia, United States, Canada, New Zealand, South Africa, United Kingdom" style="width:100%;max-width:960px;height:auto;display:inline-block;" />
+    </div>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:2rem;" class="reveal">
+      {% for name, slug in [('India','india'),('Australia','australia'),('United States','united-states'),('Canada','canada'),('New Zealand','new-zealand'),('South Africa','south-africa'),('United Kingdom','united-kingdom')] %}
+      <a href="/countries/{{ slug }}" style="color:var(--navy);font-size:0.85rem;font-weight:500;padding:0.35rem 0.9rem;border:1px solid var(--gray-300);border-radius:20px;transition:all 0.2s;" onmouseover="this.style.color='var(--green)';this.style.borderColor='var(--green)'" onmouseout="this.style.color='var(--navy)';this.style.borderColor='var(--gray-300)'">
+        {{ name }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<div class="stats-panels">
+  <div class="container">
+    <div class="stats-panels__grid">
+      {% for num, suf, label, icon, g1, g2 in [
+        ('7', '+', 'Countries Served',
+         '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+         '#1B3D7B','#2563EB'),
+        ('9', '', 'Practice Areas',
+         '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+         '#4D8A2B','#6BBE3F'),
+        ('90','+', 'Clients Advised',
+         '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+         '#0D2147','#1B3D7B'),
+        ('24','h', 'RFP Response',
+         '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+         '#3A6A1F','#4D8A2B')
+      ] %}
+      <div class="stat-panel reveal reveal--d{{ loop.index }}" style="background:linear-gradient(135deg,{{ g1 }},{{ g2 }});">
+        <div class="stat-panel__deco"></div>
+        <div class="stat-panel__icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ icon | safe }}</svg>
+        </div>
+        <div class="stat-panel__num" data-counter data-target="{{ num }}" data-suffix="{{ suf }}">{{ num }}{{ suf }}</div>
+        <div class="stat-panel__label">{{ label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ WHY ARCHWAY ═══════════════ -->
+<section class="section section--white" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header section-header--center reveal" style="margin-bottom:2rem;">
+      <span class="section-label">Why Archway Eco-Fintech</span>
+      <h2 id="why-heading" class="h2" style="color:var(--navy);">Integrated Expertise. Practical Execution.</h2>
+      <p class="lead" style="margin-top:1rem;">We bring together finance professionals, auditors, advisors, data scientists, and software engineers to deliver solutions that are accurate, efficient, and future-ready.</p>
+    </div>
+    <div class="why-ticker">
+      <div class="why-ticker__track">
+        {% set why_items = [
+          ('Genuine Local Expertise', 'Every engagement is staffed with specialists who understand the regulatory, cultural, and commercial context of the specific markets you operate in — not generalists with a passport.'),
+          ('Integrated Service Delivery', 'Tax, assurance, legal, digital, and governance delivered as a coordinated whole — so every part of your advisory relationship is aligned and consistent.'),
+          ('Technology-Driven Execution', 'Our data scientists and software engineers work alongside our finance and advisory professionals to build smarter, more efficient solutions for every client.'),
+          ('Single Point of Accountability', 'One firm, one relationship, one point of responsibility — across all services and all jurisdictions. No fragmented handoffs between unconnected advisors.'),
+          ('Responsive &amp; Accessible', 'We commit to a 24-hour RFP response and maintain real relationships with our clients. We are accessible when it matters most.'),
+          ('Scalable, Commercial Advice', 'From foundational bookkeeping to CFO-level strategic advisory — we scale our support to the stage and complexity of your business without padding engagements.')
+        ] %}
+        {% for _ in range(2) %}
+          {% for title, desc in why_items %}
+          <div class="why-ticker__card">
+            <div class="why-ticker__card-title">{{ title | safe }}</div>
+            <p class="why-ticker__card-desc">{{ desc | safe }}</p>
+          </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    <div style="margin-top:2rem;text-align:center;" class="reveal">
+      <a href="/why-us" class="btn btn--outline">Why Clients Choose Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ OUR APPROACH ═══════════════ -->
+<section class="section" aria-labelledby="approach-heading" style="background:var(--gray-50);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <span class="section-label">How We Work</span>
+      <h2 class="h2" id="approach-heading" style="color:var(--navy);">Our Approach</h2>
+      <p class="lead" style="margin-top:0.75rem;">A structured, globally-aligned methodology applied consistently across every engagement and every market.</p>
+    </div>
+    <div class="approach-timeline reveal">
+      {% for step, title, desc in [
+        ('01','Understand','Deep discovery of your business model, objectives, and regulatory footprint across every relevant jurisdiction.'),
+        ('02','Assess','Technical analysis of compliance obligations, risk exposures, and structural considerations specific to your markets.'),
+        ('03','Design','A tailored, integrated service plan that coordinates tax, legal, finance, and governance needs into one coherent framework.'),
+        ('04','Execute','Precision delivery with dedicated teams, clear timelines, and transparent communication across all deliverables.'),
+        ('05','Review','Continuous monitoring of regulatory changes and business evolution to keep advice current and commercially effective.')
+      ] %}
+      <div class="approach-step">
+        <div class="approach-step__node">{{ step }}</div>
+        <div class="approach-step__card">
+          <div class="approach-step__title">{{ title }}</div>
+          <p class="approach-step__desc">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ INSIGHTS ═══════════════ -->
+<section class="section section--white" aria-labelledby="insights-heading">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;" class="reveal">
+      <div>
+        <span class="section-label">Latest Insights</span>
+        <h2 class="h2" id="insights-heading" style="color:var(--navy);">Intelligence for Global Business</h2>
+      </div>
+      <a href="/blog" class="btn btn--outline btn--sm" style="flex-shrink:0;margin-left:2rem;">View All Insights</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      {% for post in featured_blogs %}
+      <a href="/blog/{{ post.slug }}" class="insight-card reveal reveal--d{{ loop.index }}" style="text-decoration:none;color:inherit;">
+        <div class="insight-card__image">
+          <div class="insight-card__image-bg" style="background:linear-gradient(135deg,{{ post.image_color }},{{ post.image_color }}cc);"></div>
+        </div>
+        <div class="insight-card__body">
+          <div class="insight-card__category">{{ post.category }} &nbsp;·&nbsp; {{ post.country }}</div>
+          <div class="insight-card__title">{{ post.title }}</div>
+          <div class="insight-card__excerpt">{{ post.excerpt }}</div>
+          <div class="insight-card__meta">
+            <span>{{ post.read_time }}</span>
+            <span class="insight-card__read">
+              Read Article
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title" id="cta-heading">Ready to Grow Across Borders?</h2>
+      <p class="cta-band__sub">Submit an RFP today and our specialist team will respond within 24 business hours with a tailored proposal for your requirements.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--primary btn--lg">
+          Submit an RFP
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services" class="btn btn--outline-white btn--lg">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  'use strict';
+  var carousel = document.getElementById('svcCarousel');
+  var track    = document.getElementById('svcTrack');
+  var prevBtn  = document.getElementById('svcPrev');
+  var nextBtn  = document.getElementById('svcNext');
+  var dotsEl   = document.getElementById('svcDots');
+  if (!carousel || !track || !prevBtn || !nextBtn) return;
+
+  var cards        = Array.from(track.querySelectorAll('.service-card'));
+  var currentIndex = 0;
+  var autoTimer    = null;
+  var cardW        = 0;
+  var gapPx        = 0;
+  var visible      = 3;
+
+  function measure() {
+    var w = carousel.offsetWidth;
+    visible = w < 580 ? 1 : (w < 940 ? 2 : 3);
+    gapPx   = parseFloat(getComputedStyle(track).gap) || 24;
+    cardW   = (w - (visible - 1) * gapPx) / visible;
+    cards.forEach(function (c) { c.style.flex = '0 0 ' + cardW + 'px'; });
+  }
+
+  function maxIdx() { return Math.max(0, cards.length - visible); }
+
+  function slideTo(idx) {
+    currentIndex = Math.max(0, Math.min(idx, maxIdx()));
+    track.style.transform = 'translateX(-' + (currentIndex * (cardW + gapPx)) + 'px)';
+    dotsEl.querySelectorAll('.svc-carousel__dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === currentIndex);
+    });
+    prevBtn.style.opacity = currentIndex === 0 ? '0.35' : '1';
+    nextBtn.style.opacity = currentIndex >= maxIdx() ? '0.35' : '1';
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    var count = maxIdx() + 1;
+    for (var i = 0; i < count; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'svc-carousel__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      (function (n) {
+        dot.addEventListener('click', function () { slideTo(n); resetAuto(); });
+      }(i));
+      dotsEl.appendChild(dot);
+    }
+  }
+
+  function next() { slideTo(currentIndex >= maxIdx() ? 0 : currentIndex + 1); }
+  function prev() { slideTo(currentIndex <= 0 ? maxIdx() : currentIndex - 1); }
+
+  function startAuto() { autoTimer = setInterval(next, 2000); }
+  function stopAuto()  { clearInterval(autoTimer); }
+  function resetAuto() { stopAuto(); startAuto(); }
+
+  prevBtn.addEventListener('click', function () { prev(); resetAuto(); });
+  nextBtn.addEventListener('click', function () { next(); resetAuto(); });
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  var touchX = 0;
+  track.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   function (e) {
+    var dx = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 40) { (dx > 0 ? next : prev)(); resetAuto(); }
+  }, { passive: true });
+
+  measure();
+  buildDots();
+  slideTo(0);
+  startAuto();
+
+  window.addEventListener('resize', function () {
+    measure();
+    buildDots();
+    slideTo(Math.min(currentIndex, maxIdx()));
+  });
+}());
+</script>
+{% endblock %}

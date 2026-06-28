@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Insights &amp; Blog — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Expert insights on tax, M&A, governance, and digital transformation across India, Australia, United States, Canada, New Zealand, South Africa, and United Kingdom.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Insights</span>
+      </nav>
+      <h1 class="page-hero__title">Global Business Insights</h1>
+      <p class="page-hero__sub">Specialist commentary on the regulatory, tax, M&A, and digital developments shaping business across our seven key markets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Filters -->
+<div style="background:var(--gray-50);border-bottom:1px solid var(--border);padding:1.25rem 0;">
+  <div class="container">
+    <form method="GET" action="/blog" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+      <select name="country" class="form-control" style="max-width:200px;padding:0.55rem 1rem;">
+        <option value="">All Countries</option>
+        {% for c in countries %}
+        <option value="{{ c }}" {% if c == country_filter %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+      <select name="category" class="form-control" style="max-width:220px;padding:0.55rem 1rem;">
+        <option value="">All Categories</option>
+        {% for cat in categories %}
+        <option value="{{ cat }}" {% if cat == category_filter %}selected{% endif %}>{{ cat }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn--primary btn--sm">Filter</button>
+      {% if country_filter or category_filter %}
+      <a href="/blog" class="btn btn--outline-dark btn--sm">Clear</a>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<!-- Blog grid -->
+<section class="section">
+  <div class="container">
+    {% if blogs %}
+    <div class="grid grid--3">
+      {% for post in blogs %}
+      <article class="blog-card reveal reveal--d{{ loop.index % 3 + 1 }}" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card__image">
+          <div class="blog-card__image-bg" style="background:linear-gradient(135deg,{{ post.image_color }},{{ post.image_color }}aa);"></div>
+          <span class="blog-card__country-tag">{{ post.country }}</span>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="tag tag--blue" style="font-size:0.72rem;padding:2px 8px;">{{ post.category }}</span>
+            <span class="blog-card__meta-dot"></span>
+            <time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date }}</time>
+          </div>
+          <h2 class="blog-card__title" style="font-size:0.95rem;" itemprop="headline">{{ post.title }}</h2>
+          <p class="blog-card__excerpt" itemprop="description">{{ post.excerpt }}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1rem;">
+            <span style="font-size:0.78rem;color:var(--text-secondary);">{{ post.read_time }}</span>
+            <a href="/blog/{{ post.slug }}" class="blog-card__read-more" itemprop="url">
+              Read
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center;padding:4rem;color:var(--text-secondary);">
+      <div style="font-size:3rem;margin-bottom:1rem;">🔍</div>
+      <p>No articles match your filters. <a href="/blog" style="color:var(--blue-500);">Clear filters</a> to see all insights.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Subscribe CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Stay Ahead of Regulatory Change</h2>
+      <p class="cta-band__sub">Our specialists publish regular insights on tax, governance, M&A, and digital developments across all seven of our markets. Contact us to discuss any of our published themes in the context of your business.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

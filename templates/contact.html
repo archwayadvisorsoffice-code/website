@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us &amp; Request RFP — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Contact Archway Eco-Fintech or submit an RFP. Our specialist team responds within 24 business hours with a tailored proposal.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Contact</span>
+      </nav>
+      <h1 class="page-hero__title">Get in Touch</h1>
+      <p class="page-hero__sub">Submit an RFP or contact us directly. Our specialists respond within 24 business hours with a tailored proposal or consultation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" style="padding-block:5rem;">
+  <div class="container">
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          {% if message == 'success' %}
+          <div class="alert alert--success" role="alert">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>Message sent!</strong>&nbsp;Thank you — we'll respond within 24 business hours.
+          </div>
+          {% elif message == 'error' %}
+          <div class="alert alert--error" role="alert">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <strong>Delivery error.</strong>&nbsp;Please email us directly at <a href="mailto:info@archway.in">info@archway.in</a>
+          </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="grid grid--2" style="align-items:start;gap:4rem;">
+
+      <!-- Form -->
+      <div class="reveal">
+        <div class="form-wrapper">
+          <h2 class="h3" style="margin-bottom:0.5rem;">Send Us a Message</h2>
+          <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:2rem;">All fields marked * are required.</p>
+
+          <form method="POST" action="/contact" novalidate>
+            <input type="hidden" id="is_rfp" name="is_rfp" value="no" />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="name">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Jane Smith" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="jane@company.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="company">Company / Organisation</label>
+                <input type="text" id="company" name="company" class="form-control" placeholder="Acme Corp" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98000 00000" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="country">Country / Market</label>
+                <select id="country" name="country" class="form-control">
+                  <option value="">Select country…</option>
+                  <option>India</option>
+                  <option>Australia</option>
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>New Zealand</option>
+                  <option>South Africa</option>
+                  <option>Multiple Markets</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service">Service Area</label>
+                <select id="service" name="service" class="form-control">
+                  <option value="">Select service…</option>
+                  <option>Accounting &amp; Bookkeeping</option>
+                  <option>Assurance &amp; Audit</option>
+                  <option>Business Process Outsourcing</option>
+                  <option>Data Analytics and Digital Consulting</option>
+                  <option>Global Expansion Advisory</option>
+                  <option>Governance &amp; Compliance</option>
+                  <option>M&amp;A and Corporate Advisory</option>
+                  <option>Payroll Services</option>
+                  <option>Tax Advisory &amp; Compliance</option>
+                  <option>Multiple Services</option>
+                  <option>Not Sure / General Enquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- RFP-specific fields -->
+            <div id="rfp-fields" class="hidden">
+              <div class="form-group">
+                <label class="form-label" for="rfp_type">RFP Type</label>
+                <select id="rfp_type" name="rfp_type" class="form-control">
+                  <option>New Engagement</option>
+                  <option>Ongoing Managed Service</option>
+                  <option>Project-Based Work</option>
+                  <option>Transaction Advisory</option>
+                  <option>Compliance Review</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message / Requirements *</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Please describe your requirements, objectives, and any relevant context…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary w-full" style="justify-content:center;padding:1rem;">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+
+            <p style="text-align:center;font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;">
+              We respond to all enquiries within 24 business hours. Your information is kept strictly confidential.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact info sidebar -->
+      <div class="reveal reveal--d2">
+        <!-- Direct contact -->
+        <div style="background:var(--navy);border-radius:var(--r-xl);padding:2.5rem;color:var(--white);margin-bottom:2rem;">
+          <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;margin-bottom:1.5rem;">Direct Contact</h3>
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+            <div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.35rem;">Email</div>
+              <a href="mailto:info@archway.in" style="color:var(--white);font-size:0.95rem;font-weight:500;">info@archway.in</a>
+            </div>
+            <div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.35rem;">Office Address</div>
+              <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;line-height:1.65;">SCO 126, 2nd Floor, World Street,<br>Sector 77, Faridabad,<br>Haryana, India — 121004</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Markets & Services -->
+        <div style="background:var(--gray-50);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);margin-bottom:2rem;">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);font-size:1.1rem;margin-bottom:1.5rem;">Markets &amp; Services We Offer</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+            <!-- Countries -->
+            <div>
+              <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);margin-bottom:0.75rem;">Countries</div>
+              <div style="display:flex;flex-direction:column;gap:0;">
+                {% for country in ['India', 'Australia', 'United States', 'Canada', 'New Zealand', 'South Africa', 'United Kingdom'] %}
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">{{ country }}</span>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            <!-- Services -->
+            <div>
+              <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);margin-bottom:0.75rem;">Practice Areas</div>
+              <div style="display:flex;flex-direction:column;gap:0;">
+                {% for svc in ['Accounting & Bookkeeping', 'Assurance & Audit', 'Tax Advisory', 'Payroll Services', 'Data Analytics', 'M&A Advisory', 'Governance & Compliance', 'Business Process Outsourcing', 'Global Expansion'] %}
+                <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">{{ svc }}</span>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Response promise -->
+        <div style="background:linear-gradient(135deg,var(--navy),var(--green-dark));border-radius:var(--r-lg);padding:1.75rem;color:var(--white);text-align:center;">
+          <div style="font-size:2rem;font-family:var(--font-display);font-weight:800;margin-bottom:0.25rem;">24h</div>
+          <div style="font-size:0.82rem;opacity:0.85;">Response guarantee for all RFP submissions on business days</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

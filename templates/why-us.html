@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Why Choose Archway — Integrated Professional Services{% endblock %}
+{% block meta_desc %}Discover why businesses across seven countries choose Archway Eco-Fintech — integrated expertise, technical depth, and practical execution across assurance, tax, M&A advisory, digital consulting, and more.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Why Us</span>
+      </nav>
+      <h1 class="page-hero__title">Why Choose Archway</h1>
+      <p class="page-hero__sub">An integrated professional services firm built for businesses that operate across borders — combining technical depth with practical execution across seven markets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Clients Choose Us -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:5rem;">
+      <div class="reveal">
+        <span class="overline">The Difference</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Integrated Expertise. Practical Execution.</h2>
+        <p class="lead" style="margin-top:1rem;">Clients choose us because we offer integrated professional services that combine technical depth with practical execution. We are not limited to traditional accounting or compliance support.</p>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.75;">We bring together finance professionals, auditors, advisors, data scientists, and software engineers to deliver solutions that are accurate, efficient, and future-ready.</p>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.75;">Our clients benefit from a team that understands not only statutory requirements, but also the operational realities of modern business — supporting organisations across the full spectrum from compliance and reporting to automation, analytics, and process improvement.</p>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.75;">Across India, Australia, Canada, the USA, New Zealand, the United Kingdom, and South Africa, we help businesses build strong financial systems, maintain compliance, improve reporting, and scale with confidence.</p>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="/contact" class="btn btn--navy">Talk to Our Team</a>
+          <a href="/services" class="btn btn--outline">Explore Services</a>
+        </div>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+          {% for title, desc in [
+            ('Technical Depth', 'Audit, tax, legal, and compliance expertise across seven jurisdictions'),
+            ('Practical Execution', 'Implementation-focused advisory — not just recommendations'),
+            ('Technology-Enabled', 'Data scientists and engineers embedded in our advisory team'),
+            ('Integrated Delivery', 'Finance, HR, legal, and compliance coordinated as one service'),
+            ('Multi-Jurisdiction', 'Deep local knowledge across India, UK, US, AU, CA, NZ, and SA'),
+            ('Scalable Support', 'From foundational bookkeeping to CFO-level strategic advisory')
+          ] %}
+          <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:1.25rem;">
+            <div style="font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">{{ title }}</div>
+            <div style="font-size:0.8rem;color:var(--text-secondary);line-height:1.55;">{{ desc }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Six Differentiators -->
+<section class="section section--subtle">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">What Sets Us Apart</span>
+      <h2 class="h2">Six Reasons Clients Choose Archway</h2>
+      <p class="lead">Across seven international markets — our model is built to deliver where it matters most.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal reveal--d1">
+        <h3 class="value-card__title">Genuine Local Expertise</h3>
+        <p class="value-card__text">Every engagement is staffed with specialists who understand the regulatory, cultural, and commercial context of the specific markets you operate in — not generalists with a passport.</p>
+      </div>
+      <div class="value-card reveal reveal--d2">
+        <h3 class="value-card__title">Integrated Service Delivery</h3>
+        <p class="value-card__text">Tax, assurance, legal, digital, and governance delivered as a coordinated whole — so every part of your advisory relationship is aligned and consistent.</p>
+      </div>
+      <div class="value-card reveal reveal--d3">
+        <h3 class="value-card__title">Technology-Driven Execution</h3>
+        <p class="value-card__text">Our data scientists and software engineers work alongside our finance and advisory professionals to build smarter, more efficient solutions — not manual workarounds.</p>
+      </div>
+      <div class="value-card reveal reveal--d1">
+        <h3 class="value-card__title">Single Point of Accountability</h3>
+        <p class="value-card__text">One firm, one relationship, one point of responsibility — across all services and all jurisdictions. No fragmented handoffs between unconnected advisors.</p>
+      </div>
+      <div class="value-card reveal reveal--d2">
+        <h3 class="value-card__title">Responsive &amp; Accessible</h3>
+        <p class="value-card__text">We commit to a 24-hour RFP response and maintain real relationships with our clients. We are accessible when it matters, not just at billing time.</p>
+      </div>
+      <div class="value-card reveal reveal--d3">
+        <h3 class="value-card__title">Scalable, Commercial Advice</h3>
+        <p class="value-card__text">From foundational bookkeeping to CFO-level strategic advisory — we scale our support to the stage and complexity of your business without padding engagements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Approach -->
+<section class="section" id="approach" style="background:var(--gray-50);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <span class="section-label">How We Work</span>
+      <h2 class="h2" style="color:var(--navy);">Our Approach</h2>
+      <p class="lead" style="margin-top:0.75rem;">A structured, globally-aligned methodology applied consistently across every engagement and every market.</p>
+    </div>
+    <div class="approach-timeline reveal">
+      {% for step, title, desc in [
+        ('01','Understand','Deep discovery of your business model, objectives, and regulatory footprint across every relevant jurisdiction.'),
+        ('02','Assess','Technical analysis of compliance obligations, risk exposures, and structural considerations specific to your markets.'),
+        ('03','Design','A tailored, integrated service plan that coordinates tax, legal, finance, and governance needs into one coherent framework.'),
+        ('04','Execute','Precision delivery with dedicated teams, clear timelines, and transparent communication across all deliverables.'),
+        ('05','Review','Continuous monitoring of regulatory changes and business evolution to keep advice current and commercially effective.')
+      ] %}
+      <div class="approach-step">
+        <div class="approach-step__node">{{ step }}</div>
+        <div class="approach-step__card">
+          <div class="approach-step__title">{{ title }}</div>
+          <p class="approach-step__desc">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Commitment Statement -->
+<section class="section section--subtle">
+  <div class="container">
+    <div style="max-width:800px;margin-inline:auto;text-align:center;" class="reveal">
+      <span class="overline">Our Commitment</span>
+      <h2 class="h2" style="margin-top:0.75rem;">Building Businesses Across Borders</h2>
+      <p style="margin-top:1.25rem;color:var(--text-secondary);line-height:1.8;font-size:1rem;">In today's environment, businesses need advisors who can operate across jurisdictions, understand changing regulations, and use technology to create better outcomes. Our firm is built to support that need.</p>
+      <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;font-size:1rem;">Whether you need assurance, accounting, tax support, corporate advisory, governance, outsourcing, payroll, digital consulting, or expansion advisory — we provide a coordinated and professional service model that helps your business stay compliant, efficient, and ready for growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Ready to Work With a Team That Delivers?</h2>
+      <p class="cta-band__sub">Contact us to discuss your requirements, or submit an RFP and we'll respond with a detailed proposal within 24 business hours.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Get in Touch</a>
+        <a href="/services" class="btn btn--outline-white btn--lg">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

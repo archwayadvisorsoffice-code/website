@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}{{ post.excerpt[:160] }}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:var(--space-16);">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="/blog">Insights</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>{{ post.country }}</span>
+      </nav>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+        <span class="tag" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);">{{ post.category }}</span>
+        <span class="tag" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);">{{ post.read_time }}</span>
+        <span class="tag" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);">{{ post.country }}</span>
+      </div>
+      <h1 class="page-hero__title" style="font-size:clamp(1.6rem,4vw,2.4rem);">{{ post.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Article body -->
+<section class="blog-post">
+  <div class="container">
+
+    <div class="blog-post__excerpt-lead">
+      {{ post.excerpt }}
+    </div>
+
+    <div class="blog-post__content">
+      {{ post.content | safe }}
+    </div>
+
+    <!-- Tags -->
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);">Tags:</span>
+      <span class="tag tag--blue">{{ post.country }}</span>
+      <span class="tag tag--blue">{{ post.category }}</span>
+      <span class="tag tag--blue">Archway Insights</span>
+    </div>
+
+    <!-- Share -->
+    <div style="margin-top:1.5rem;padding:1.5rem;background:var(--gray-50);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-weight:600;font-size:0.9rem;color:var(--navy-700);">Found this useful?</div>
+        <div style="font-size:0.82rem;color:var(--text-secondary);">Discuss how these insights apply to your business.</div>
+      </div>
+      <a href="/contact" class="btn btn--primary btn--sm">Talk to a Specialist</a>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles -->
+{% if related %}
+<section class="section section--subtle">
+  <div class="container">
+    <div style="margin-bottom:2.5rem;">
+      <span class="overline">Continue Reading</span>
+      <h2 class="h3" style="margin-top:0.5rem;color:var(--navy-700);">More Global Insights</h2>
+    </div>
+    <div class="grid grid--3">
+      {% for r in related %}
+      <article class="blog-card reveal reveal--d{{ loop.index }}">
+        <div class="blog-card__image">
+          <div class="blog-card__image-bg" style="background:linear-gradient(135deg,{{ r.image_color }},{{ r.image_color }}aa);"></div>
+          <span class="blog-card__country-tag">{{ r.country }}</span>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="tag tag--blue" style="font-size:0.72rem;padding:2px 8px;">{{ r.category }}</span>
+          </div>
+          <h3 class="blog-card__title" style="font-size:0.9rem;">{{ r.title }}</h3>
+          <a href="/blog/{{ r.slug }}" class="blog-card__read-more" style="margin-top:auto;padding-top:1rem;">
+            Read
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

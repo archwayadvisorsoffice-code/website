@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %}About Us — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Learn about Archway Eco-Fintech Private Limited — our mission, values, and the team delivering world-class professional services across seven countries.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>About Us</span>
+      </nav>
+      <h1 class="page-hero__title">About Archway</h1>
+      <p class="page-hero__sub">A firm built on expertise, integrity, and an unwavering commitment to client outcomes — wherever in the world you operate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Story -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:5rem;">
+      <div class="reveal">
+        <span class="overline">Our Mission</span>
+        <h2 class="h2" style="margin-top:0.75rem;">We Exist to Help Businesses Grow With Confidence</h2>
+        <p class="lead" style="margin-top:1rem;">Archway Eco-Fintech was founded on a simple but powerful belief: that businesses navigating complex, multi-jurisdictional environments deserve advisors who genuinely understand those environments — not consultants who are one step ahead in a textbook.</p>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.75;">We bring together specialists in accounting, taxation, mergers and acquisitions, corporate governance, digital strategy, and business process management — integrating these disciplines to deliver advice that is coherent, actionable, and grounded in the commercial reality our clients face.</p>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.75;">Today we serve clients across India, Australia, the United States, Canada, New Zealand, and South Africa — bringing deep local knowledge together with global perspective.</p>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+          <div style="aspect-ratio:1;background:var(--navy);border-radius:var(--r-lg);padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);">
+            <div style="font-size:2.5rem;font-family:var(--font-display);font-weight:800;color:var(--white);line-height:1;">7</div>
+            <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.65);margin-top:0.6rem;font-weight:600;">Countries</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--green);border-radius:var(--r-lg);padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);">
+            <div style="font-size:2.5rem;font-family:var(--font-display);font-weight:800;color:var(--white);line-height:1;">10+</div>
+            <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.75);margin-top:0.6rem;font-weight:600;">Services</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--navy-mid);border-radius:var(--r-lg);padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);">
+            <div style="font-size:2.5rem;font-family:var(--font-display);font-weight:800;color:var(--white);line-height:1;">90+</div>
+            <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.65);margin-top:0.6rem;font-weight:600;">Clients</div>
+          </div>
+          <div style="aspect-ratio:1;background:var(--navy-dark);border-radius:var(--r-lg);padding:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);">
+            <div style="font-size:2.5rem;font-family:var(--font-display);font-weight:800;color:var(--white);line-height:1;">24h</div>
+            <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.65);margin-top:0.6rem;font-weight:600;">RFP Response</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key People / Leadership Team -->
+<section class="section section--white" id="team">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Our Leadership</span>
+      <h2 class="h2">Key People</h2>
+      <p class="lead">The experienced professionals leading Archway Eco-Fintech Private Limited.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card reveal reveal--d1">
+        <img src="{{ url_for('static', filename='img/gurmeet-singh.jpeg') }}" alt="Gurmeet Singh" class="team-card__photo" />
+        <div class="team-card__name">Gurmeet Singh</div>
+        <div class="team-card__role">Director &amp; Head of Tax</div>
+      </div>
+
+      <div class="team-card reveal reveal--d2">
+        <img src="{{ url_for('static', filename='img/anil-malik.jpeg') }}" alt="Anil Malik" class="team-card__photo" style="object-position: 50% -30px;" />
+        <div class="team-card__name">Anil Malik</div>
+        <div class="team-card__role">Director &amp; Head of Accounting Operations</div>
+      </div>
+
+      <div class="team-card reveal reveal--d3">
+        <img src="{{ url_for('static', filename='img/rahul-sharma.webp') }}" alt="Rahul Sharma" class="team-card__photo" />
+        <div class="team-card__name">Rahul Sharma</div>
+        <div class="team-card__role">Legal Head</div>
+      </div>
+
+      <div class="team-card reveal reveal--d4">
+        <img src="{{ url_for('static', filename='img/komal-kapoor.webp') }}" alt="Komal Kapoor" class="team-card__photo" />
+        <div class="team-card__name">Komal Kapoor</div>
+        <div class="team-card__role">Company Secretary</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" id="values" style="background: linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.06) 40%, rgba(0,0,0,0.22) 100%), linear-gradient(140deg, #0D2147 0%, #1B3D7B 30%, #0A2E20 60%, #061E14 100%); position:relative;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline" style="color:rgba(255,255,255,0.65);">What We Stand For</span>
+      <h2 class="h2" style="color:var(--white);">Our Core Values</h2>
+      <p class="lead" style="color:rgba(255,255,255,0.85);">These principles guide every engagement, every recommendation, and every relationship we build.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal reveal--d1">
+        <h3 class="value-card__title">Client Centricity</h3>
+        <p class="value-card__text">Your commercial objectives drive every recommendation we make. We measure our success by your outcomes, not our activity.</p>
+      </div>
+      <div class="value-card reveal reveal--d2">
+        <h3 class="value-card__title">Technical Excellence</h3>
+        <p class="value-card__text">We invest relentlessly in staying ahead of regulatory change, market developments, and best practice — so our clients always have the sharpest advice.</p>
+      </div>
+      <div class="value-card reveal reveal--d3">
+        <h3 class="value-card__title">Integrity</h3>
+        <p class="value-card__text">We say what we mean, deliver what we promise, and tell our clients what they need to hear — even when it is not what they want to hear.</p>
+      </div>
+      <div class="value-card reveal reveal--d1">
+        <h3 class="value-card__title">Global Perspective</h3>
+        <p class="value-card__text">We think across borders by design. Our advisors understand that a decision made in one jurisdiction creates consequences in others.</p>
+      </div>
+      <div class="value-card reveal reveal--d2">
+        <h3 class="value-card__title">Responsiveness</h3>
+        <p class="value-card__text">Business doesn't pause. Neither do we. Our teams are accessible, responsive, and committed to turning around quality work when it matters.</p>
+      </div>
+      <div class="value-card reveal reveal--d3">
+        <h3 class="value-card__title">Continuous Growth</h3>
+        <p class="value-card__text">We grow our capabilities alongside our clients — investing in people, technology, and knowledge to remain at the frontier of professional services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Provide -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Our Scope</span>
+      <h2 class="h2">Professional Services Built for a Complex World</h2>
+      <p class="lead">Archway's capabilities span the full range of services a growing international business needs — structured so they work together, not in isolation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
+      {% set services_list = [
+        'Assurance & Audit',
+        'Statutory & Special Purpose Audit',
+        'Accountancy & Bookkeeping',
+        'Internal Audit & Controls',
+        'Taxation Advisory & Planning',
+        'GST / VAT Compliance & Filing',
+        'Transfer Pricing',
+        'M&A Advisory & Due Diligence',
+        'Corporate Restructuring',
+        'Joint Ventures & Franchising',
+        'Personnel & HR Advisory',
+        'Market Research & Analysis',
+        'Data Analytics and Digital Consulting',
+        'Business Process Outsourcing',
+        'Corporate Governance',
+        'Secretarial & Regulatory Filings',
+        'Risk Management',
+        'Insolvency Advisory',
+        'Global Expansion Advisory',
+        'ESG & Sustainability Assurance'
+      ] %}
+      {% for name in services_list %}
+      <div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-radius:var(--r-md);background:var(--gray-50);border:1px solid var(--border);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:0.875rem;font-weight:500;color:var(--navy);">{{ name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Why Clients Choose Us -->
+<section class="section section--white">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:5rem;">
+      <div class="reveal">
+        <span class="overline">Why Clients Choose Us</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Integrated Expertise. Practical Execution.</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Clients choose us because we offer integrated professional services that combine technical depth with practical execution. We are not limited to traditional accounting or compliance support — we bring together finance professionals, auditors, advisors, data scientists, and software engineers to deliver solutions that are accurate, efficient, and future-ready.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Our clients benefit from a team that understands not only statutory requirements, but also the operational realities of modern business. This allows us to support organisations with a broader perspective — from compliance and reporting to automation, analytics, and process improvement.</p>
+        <a href="/services" class="btn btn--navy" style="margin-top:2rem;">Explore Our Services</a>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+          {% for title, desc in [
+            ('Technical Depth', 'Audit, tax, legal, and compliance expertise across seven jurisdictions'),
+            ('Practical Execution', 'Implementation-focused advisory — not just recommendations'),
+            ('Technology-Enabled', 'Data scientists and engineers embedded in our advisory team'),
+            ('Integrated Delivery', 'Finance, HR, legal, and compliance coordinated as one service'),
+            ('Multi-Jurisdiction', 'Deep local knowledge across India, UK, US, AU, CA, NZ, and SA'),
+            ('Scalable Support', 'From foundational bookkeeping to CFO-level strategic advisory')
+          ] %}
+          <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:1.25rem;">
+            <div style="font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">{{ title }}</div>
+            <div style="font-size:0.8rem;color:var(--text-secondary);line-height:1.55;">{{ desc }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Work With a Team That Delivers</h2>
+      <p class="cta-band__sub">Contact us to discuss your requirements, or submit an RFP and we'll respond with a detailed proposal within 24 business hours.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Get in Touch</a>
+        <a href="/services" class="btn btn--outline-white btn--lg">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Markets We Serve — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Archway Eco-Fintech operates across India, Australia, United States, Canada, New Zealand, and South Africa — delivering specialist advice with deep local knowledge.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Markets</span>
+      </nav>
+      <h1 class="page-hero__title">Our Global Markets</h1>
+      <p class="page-hero__sub">Deep local knowledge. Global perspective. We operate across seven key markets, with specialist expertise in each jurisdiction's regulatory, tax, and commercial environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Country Cards -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2">
+
+      <!-- India -->
+      <div class="country-card reveal" id="india">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#FF9933,#138808);">
+          <a href="/countries/india" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">India</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">GST Advisory</span>
+            <span class="tag tag--blue">Income Tax</span>
+            <span class="tag tag--blue">Transfer Pricing</span>
+            <span class="tag tag--blue">Bookkeeping</span>
+            <span class="tag tag--blue">Company Secretarial</span>
+          </div>
+          <p class="country-card__desc">India's tax ecosystem — GST, income tax, and transfer pricing — is one of the world's most digitally sophisticated and rapidly evolving. We provide real-time compliance support backed by deep knowledge of CBDT, GSTN, and SEBI frameworks.</p>
+          <a href="/countries/india" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore India Services →</a>
+        </div>
+      </div>
+
+      <!-- Australia -->
+      <div class="country-card reveal reveal--d1" id="australia">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#003087,#CF142B);">
+          <a href="/countries/australia" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">Australia</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">ATO Compliance</span>
+            <span class="tag tag--blue">Corporate Governance</span>
+            <span class="tag tag--blue">ASIC Advisory</span>
+            <span class="tag tag--blue">Climate Disclosures</span>
+            <span class="tag tag--blue">FIRB Guidance</span>
+          </div>
+          <p class="country-card__desc">Australia's regulatory environment has evolved significantly — mandatory climate disclosures, enhanced ASIC enforcement, and strengthened director liability requirements are reshaping how international businesses operate.</p>
+          <a href="/countries/australia" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore Australia Services →</a>
+        </div>
+      </div>
+
+      <!-- United States -->
+      <div class="country-card reveal" id="usa">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#3C3B6E,#B22234);">
+          <a href="/countries/united-states" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">United States</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">IRS Compliance</span>
+            <span class="tag tag--blue">M&amp;A Advisory</span>
+            <span class="tag tag--blue">Pillar Two</span>
+            <span class="tag tag--blue">Digital Transformation</span>
+            <span class="tag tag--blue">Finance Function</span>
+          </div>
+          <p class="country-card__desc">The United States tax environment demands specialist expertise — from IRS requirements and state tax obligations to structuring cross-border transactions under United States treaty networks.</p>
+          <a href="/countries/united-states" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore United States Services →</a>
+        </div>
+      </div>
+
+      <!-- Canada -->
+      <div class="country-card reveal reveal--d1" id="canada">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#D80621,#8C0010);">
+          <a href="/countries/canada" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">Canada</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">CRA Compliance</span>
+            <span class="tag tag--blue">Cross-Border M&amp;A</span>
+            <span class="tag tag--blue">Investment Canada Act</span>
+            <span class="tag tag--blue">Transfer Pricing</span>
+            <span class="tag tag--blue">Business Structuring</span>
+          </div>
+          <p class="country-card__desc">Canada's deep capital markets and institutional investor base make it a critical market for cross-border deal activity, particularly on the India-Canada corridor.</p>
+          <a href="/countries/canada" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore Canada Services →</a>
+        </div>
+      </div>
+
+      <!-- New Zealand -->
+      <div class="country-card reveal" id="nz">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#00247D,#CF142B);">
+          <a href="/countries/new-zealand" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">New Zealand</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">IRD Compliance</span>
+            <span class="tag tag--blue">Business Structuring</span>
+            <span class="tag tag--blue">Tax Treaties</span>
+            <span class="tag tag--blue">FMCA Advisory</span>
+            <span class="tag tag--blue">AML/CFT</span>
+          </div>
+          <p class="country-card__desc">New Zealand consistently ranks among the world's most business-friendly environments — its extensive tax treaty network and strong governance institutions make it an attractive regional headquarters jurisdiction.</p>
+          <a href="/countries/new-zealand" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore New Zealand Services →</a>
+        </div>
+      </div>
+
+      <!-- South Africa -->
+      <div class="country-card reveal reveal--d1" id="southafrica">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#007A4D,#002395);">
+          <a href="/countries/south-africa" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">South Africa</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">SARS Compliance</span>
+            <span class="tag tag--blue">B-BBEE Advisory</span>
+            <span class="tag tag--blue">Investment Structuring</span>
+            <span class="tag tag--blue">Corporate Governance</span>
+            <span class="tag tag--blue">Africa Gateway</span>
+          </div>
+          <p class="country-card__desc">South Africa is Africa's premier business hub — strategically vital for businesses with pan-African ambitions. We advise on B-BBEE compliance, SARS obligations, and optimal structures for entry and expansion.</p>
+          <a href="/countries/south-africa" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore South Africa Services →</a>
+        </div>
+      </div>
+
+      <!-- United Kingdom -->
+      <div class="country-card reveal" id="uk">
+        <div class="country-card__header" style="background:linear-gradient(135deg,#012169,#C8102E);">
+          <a href="/countries/united-kingdom" style="text-decoration:none;">
+            <div class="country-card__name" style="color:var(--white);">United Kingdom</div>
+          </a>
+        </div>
+        <div class="country-card__body" style="padding-top:1.5rem;">
+          <div class="country-card__services">
+            <span class="tag tag--blue">HMRC Compliance</span>
+            <span class="tag tag--blue">VAT Advisory</span>
+            <span class="tag tag--blue">FCA Regulatory</span>
+            <span class="tag tag--blue">Post-Brexit Trade</span>
+            <span class="tag tag--blue">R&amp;D Tax Credits</span>
+          </div>
+          <p class="country-card__desc">The UK's post-Brexit regulatory landscape — spanning HMRC, FCA, and Companies House — demands specialist expertise. We guide clients through UK entry structuring, tax compliance, and the National Security and Investment Act regime.</p>
+          <a href="/countries/united-kingdom" class="btn btn--primary btn--sm" style="margin-top:1rem;">Explore United Kingdom Services →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why Local Expertise Matters -->
+<section class="section section--subtle">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Our Approach</span>
+      <h2 class="h2">Local Knowledge. Global Standards.</h2>
+      <p class="lead">In each market, we combine specialist regulatory knowledge with the professional standards expected of a world-class advisory firm.</p>
+    </div>
+    <div class="grid grid--3">
+      {% for title, img, desc in [
+        ('Regulatory Depth',
+         'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+         'We track regulatory change in every jurisdiction we serve — understanding not just the rules as written, but how they are enforced in practice.'),
+        ('Cultural Intelligence',
+         'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+         'Business culture, negotiation norms, and relationship expectations differ markedly across our seven markets. We navigate these differences fluently.'),
+        ('Network Access',
+         'https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+         'Deep relationships with local regulators, financial institutions, and professional communities give our clients access that generalist firms cannot match.')
+      ] %}
+      <div class="service-card reveal reveal--d{{ loop.index }}" style="padding:0;overflow:hidden;">
+        <div style="height:190px;overflow:hidden;">
+          <img src="{{ img }}" alt="{{ title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+        </div>
+        <div style="padding:1.75rem;">
+          <h3 class="service-card__title">{{ title }}</h3>
+          <p class="service-card__desc">{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Operating Across Multiple Markets?</h2>
+      <p class="cta-band__sub">Our integrated multi-jurisdiction teams deliver coherent advice across all your operating markets — with a single point of accountability for your engagement.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Request an RFP</a>
+        <a href="/services" class="btn btn--outline-white btn--lg">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

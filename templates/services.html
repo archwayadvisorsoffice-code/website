@@ -1,0 +1,431 @@
+{% extends "base.html" %}
+
+{% block title %}Services — Archway Eco-Fintech{% endblock %}
+{% block meta_desc %}Archway Eco-Fintech delivers integrated assurance, audit, accounting, tax, M&A advisory, digital consulting, and global expansion services across seven markets.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Services</span>
+      </nav>
+      <h1 class="page-hero__title">Our Services</h1>
+      <p class="page-hero__sub">Integrated professional services designed for businesses that operate — or aspire to operate — across borders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Quick nav -->
+<div style="background:var(--gray-50);border-bottom:1px solid var(--border);padding:1rem 0;position:sticky;top:60px;z-index:100;">
+  <div class="container">
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+      <a href="#accounting"  class="btn btn--outline-dark btn--sm">Accounting</a>
+      <a href="#audit"       class="btn btn--outline-dark btn--sm">Assurance &amp; Audit</a>
+      <a href="#outsourcing" class="btn btn--outline-dark btn--sm">Outsourcing</a>
+      <a href="#digital"     class="btn btn--outline-dark btn--sm">Data Analytics</a>
+      <a href="#expansion"   class="btn btn--outline-dark btn--sm">Global Expansion</a>
+      <a href="#governance"  class="btn btn--outline-dark btn--sm">Governance &amp; Compliance</a>
+      <a href="#ma"          class="btn btn--outline-dark btn--sm">M&amp;A</a>
+      <a href="#payroll"     class="btn btn--outline-dark btn--sm">Payroll</a>
+      <a href="#tax"         class="btn btn--outline-dark btn--sm">Tax</a>
+    </div>
+  </div>
+</div>
+
+<!-- 1. Accounting & Bookkeeping -->
+<section class="section" id="accounting">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal">
+        <span class="overline">Core Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Accounting &amp; Bookkeeping</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Accurate accounting is essential for every successful business. Our Accounting &amp; Bookkeeping services help organisations maintain clean, timely, and reliable financial records that support compliance, reporting, and strategic decision-making.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">For many businesses, accounting becomes complex as operations expand across locations, entities, or jurisdictions. We help standardise processes, create consistency in reporting, and improve visibility across the finance function — ensuring records are not only accurate, but also useful for management and compliant with local requirements.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Financial bookkeeping & ledger management', 'Monthly management accounts', 'Internal audit & control reviews', 'External audit preparation & liaison', 'Cash flow forecasting', 'Payroll accounting & compliance', 'Multi-currency consolidation', 'IFRS / GAAP financial statements'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;color:var(--text-primary);">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Accounting Standards Supported</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for std in ['IFRS Reporting', 'US GAAP', 'Ind AS (India)', 'AASB (Australia)', 'FRS 102 (UK)', 'Multi-currency Consolidation', 'Management Accounts'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ std }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 2. Assurance & Audit -->
+<section class="section section--subtle" id="audit">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Audit Standards &amp; Frameworks</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for std in ['IFRS — International Standards', 'GAAP — US/Local Standards', 'Ind AS — Indian Accounting', 'AASB — Australian Standards', 'FRS 102 — UK Standards', 'ISA — Audit Standards', 'ESG Assurance Frameworks'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ std }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">Assurance Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Assurance &amp; Audit</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Trust in financial information is the foundation of sound business decisions. Our Assurance &amp; Audit services are designed to provide independent, objective, and high-quality assurance that strengthens confidence among management, owners, lenders, regulators, and other stakeholders.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">A well-executed audit does more than confirm the numbers. It identifies process gaps, control weaknesses, documentation issues, and governance concerns that may otherwise go unnoticed — helping businesses improve financial discipline, strengthen controls, and support better decision-making.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Statutory audit (IFRS, GAAP, Ind AS, AASB)', 'Internal audit & controls review', 'Risk-based audit methodology', 'Audit committee advisory', 'Financial statement assurance', 'Special purpose audits & agreed-upon procedures', 'ESG & sustainability assurance', 'IT & systems audit'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;color:var(--text-primary);">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 3. Business Process Outsourcing -->
+<section class="section" id="outsourcing">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">Managed Services</span>
+      <h2 class="h2">Business Process Outsourcing</h2>
+      <p class="lead">As businesses grow, so do their operational demands. Our Business Process Outsourcing services help organisations delegate selected finance, compliance, administrative, and reporting activities to a trusted professional team — enabling leadership to focus more effectively on growth and strategy.</p>
+    </div>
+    <div class="grid grid--3">
+      {% for title, desc in [
+        ('Finance Function Outsourcing', 'CFO-as-a-service, management reporting, treasury operations, and financial planning delivered as a fully managed function.'),
+        ('Accounting Operations', 'End-to-end accounts payable, receivable, payroll, bank reconciliation, and month-end close managed by our specialists.'),
+        ('HR & Payroll Outsourcing', 'Personnel management, recruitment support, payroll processing, and employment compliance across your operating jurisdictions.'),
+        ('Compliance Management', 'Ongoing regulatory compliance monitoring, filing management, and regulatory reporting — proactively managed so nothing falls through the cracks.'),
+        ('Tax Compliance Managed Service', 'Continuous management of your multi-jurisdiction tax obligations, including GST/VAT, corporate tax, and withholding tax filings.'),
+        ('Secretarial Managed Service', 'Ongoing secretarial and governance services ensuring your corporate entities remain compliant across all registered jurisdictions.')
+      ] %}
+      <div class="service-card reveal reveal--d{{ loop.index % 3 + 1 }}">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="service-card__title">{{ title }}</h3>
+        <p class="service-card__desc">{{ desc }}</p>
+        <a href="/contact" class="service-card__link">
+          Enquire
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 4. Data Analytics and Digital Consulting -->
+<section class="section section--subtle" id="digital">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1.5rem;">Digital Capabilities</h3>
+          {% for cap in [('Data Analytics & BI', 'From dashboards to predictive models'), ('Machine Learning', 'AI-driven insights for smarter decisions'), ('Business Intelligence', 'Turning data into strategic clarity'), ('Digital Strategy', 'Roadmaps for transformation')] %}
+          <div style="display:flex;gap:0.75rem;align-items:flex-start;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--green);margin-top:0.45rem;flex-shrink:0;"></div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;color:var(--navy);">{{ cap[0] }}</div>
+              <div style="font-size:0.82rem;color:var(--text-secondary);">{{ cap[1] }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">Digital Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Data Analytics and Digital Consulting</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Modern businesses generate large amounts of data, but the real value lies in turning that data into insight. Our Data Analytics and Digital Consulting services help organisations use information, automation, and technology to improve performance, reporting, and control.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Our team includes data scientists and software engineers who work alongside finance and compliance professionals to develop practical, technology-driven solutions — going beyond traditional advisory to build systems that are more intelligent, efficient, and tailored to business needs.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Business intelligence & dashboarding', 'Predictive analytics & ML modelling', 'Financial data integration', 'ERP selection & implementation advisory', 'Digital transformation strategy', 'Business database design & management', 'Online information services', 'Process automation & RPA advisory'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 5. Global Expansion Advisory -->
+<section class="section" id="expansion">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Markets We Can Help You Enter</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for market in ['India — FEMA / RBI', 'Australia — FIRB / ASIC', 'United States — CFIUS / SEC', 'Canada — Investment Canada Act', 'New Zealand — OIA / Companies Office', 'South Africa — SARB / CIPC', 'United Kingdom — NSIA / FCA'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ market }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div style="background:var(--navy);border-radius:var(--r-xl);padding:2rem;margin-top:1.25rem;color:var(--white);">
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-light);margin-bottom:0.75rem;">Our Approach</div>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.8);line-height:1.65;margin-bottom:1rem;">We begin by understanding your expansion plan, business model, proposed workforce structure, and target jurisdictions. Our approach is practical and implementation-focused — we help businesses build a compliant operating foundation, set up recurring processes, and coordinate with local stakeholders so that expansion is not just legally possible, but operationally sustainable.</p>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;">
+            {% for step in [
+              'Map key legal, payroll, accounting, and compliance obligations by jurisdiction',
+              'Build a compliant operating foundation before first hire or first invoice',
+              'Set up recurring payroll, filing, and governance workflows',
+              'Align HR, finance, payroll, and compliance into one workable framework',
+              'Coordinate with local professionals and authorities where required'
+            ] %}
+            <div style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.85rem;line-height:1.55;color:rgba(255,255,255,0.85);">
+              <span style="color:var(--green-light);font-weight:700;flex-shrink:0;margin-top:0.05rem;">→</span>{{ step }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">International Markets</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Global Expansion Advisory</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Expand into new markets with confidence, structure, and compliance. We help businesses establish and operate across jurisdictions by aligning entity setup, labour law obligations, payroll processes, accounting systems, tax registrations, and statutory compliance requirements from the outset.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Whether you are entering India, Australia, Canada, the USA, New Zealand, the United Kingdom, or other growth markets, our team helps you plan the right operating model and manage the practical compliance requirements that follow international expansion.</p>
+
+        <div style="margin-top:1.75rem;">
+          <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--navy);margin-bottom:0.75rem;">What We Cover</div>
+          <div style="display:flex;flex-direction:column;gap:0.65rem;">
+            {% for item in [
+              'Entity setup and expansion structuring across jurisdictions',
+              'Labour law and employment compliance — local contracts, worker classification, and onboarding',
+              'Payroll advisory covering tax withholdings, social security, benefits, pay-cycle controls, and statutory reporting',
+              'Accounting and financial reporting support aligned with local regulatory expectations',
+              'Secretarial and ongoing compliance coordination — registrations, filings, and governance calendars',
+              'Cross-functional advisory connecting finance, HR, legal, and compliance into one workable framework'
+            ] %}
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:0.15rem;"><polyline points="20 6 9 17 4 12"/></svg>
+              <span style="font-size:0.875rem;color:var(--text-primary);line-height:1.55;">{{ item }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;background:var(--gray-50);border-radius:var(--r-md);padding:1.25rem;border-left:3px solid var(--green);">
+          <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--navy);margin-bottom:0.6rem;">Why Businesses Need It</div>
+          <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.65;">Cross-border expansion is not only a registration exercise. Before the first employee is hired or the first invoice is raised, a business needs to determine the right hiring model, complete tax and authority registrations, localise employment documents, and create a statutory compliance calendar. Without this structure, businesses face penalties, payroll errors, worker misclassification risk, and reporting gaps.</p>
+        </div>
+
+        <div style="margin-top:1.25rem;background:var(--gray-50);border-radius:var(--r-md);padding:1.25rem;border-left:3px solid var(--navy);">
+          <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--navy);margin-bottom:0.6rem;">This Service Is Ideal For</div>
+          <div style="display:flex;flex-direction:column;gap:0.4rem;">
+            {% for who in [
+              'Foreign companies entering India',
+              'Indian businesses expanding overseas',
+              'Startups hiring teams across multiple countries',
+              'Businesses needing integrated payroll, accounting, and compliance support after market entry'
+            ] %}
+            <div style="font-size:0.875rem;color:var(--text-secondary);display:flex;gap:0.5rem;align-items:flex-start;">
+              <span style="color:var(--green);font-weight:700;flex-shrink:0;">·</span>{{ who }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <span class="tag tag--blue">India</span>
+          <span class="tag tag--blue">Australia</span>
+          <span class="tag tag--blue">United States</span>
+          <span class="tag tag--blue">Canada</span>
+          <span class="tag tag--blue">New Zealand</span>
+          <span class="tag tag--blue">South Africa</span>
+          <span class="tag tag--blue">United Kingdom</span>
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 6. Governance & Compliance -->
+<section class="section section--subtle" id="governance">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Regulatory Frameworks We Cover</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for reg in ['India — SEBI / MCA', 'Australia — ASIC / ASX', 'United States — SEC / SOX', 'Canada — OSC / CSA', 'New Zealand — FMA / FMCA', 'South Africa — JSE / CIPC', 'United Kingdom — FCA / FRC'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ reg }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">Governance Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Governance &amp; Compliance</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Strong governance is essential for sustainable business growth. Our Governance &amp; Compliance services help businesses meet statutory, regulatory, and internal governance responsibilities with consistency, accuracy, and control.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Governance is not just about meeting deadlines. It is about creating a framework of accountability, documentation, and decision-making that supports the long-term health of the business. By combining technical compliance knowledge with a structured advisory approach, we help businesses reduce regulatory risk and operate with greater confidence.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Company secretarial services', 'Statutory & regulatory filings', 'Board governance advisory', 'Risk management frameworks', 'Compliance programme design', 'AML/CFT programme support', 'Regulatory change management', 'Corporate constitution & charter review'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 7. M&A and Corporate Advisory -->
+<section class="section" id="ma">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal">
+        <span class="overline">Corporate Advisory</span>
+        <h2 class="h2" style="margin-top:0.75rem;">M&amp;A and Corporate Advisory</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Mergers, acquisitions, restructuring, and strategic transactions require a clear understanding of financial, legal, and commercial implications. Our M&amp;A and Corporate Advisory services are designed to support businesses through these critical decisions with insight, structure, and execution support.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Before any transaction, it is important to understand not just the opportunity, but also the risks, assumptions, and integration requirements. We help clients assess financial performance, working capital patterns, liabilities, compliance concerns, and structural issues so that decisions are informed and commercially sound.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Buy-side & sell-side M&A advisory', 'Financial due diligence', 'Business valuation', 'Deal structuring & negotiation', 'Joint venture structuring', 'Corporate restructuring & reorganisation', 'Insolvency & turnaround advisory', 'Post-merger integration planning'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+      <div class="reveal reveal--d2">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">M&amp;A Advisory by Market</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for market in ['India — CCI / FEMA', 'Australia — FIRB / ACCC', 'United States — CFIUS / DOJ', 'Canada — Investment Canada Act', 'New Zealand — Commerce Act', 'South Africa — Competition Commission', 'United Kingdom — CMA / NSI Act'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ market }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 8. Payroll Services -->
+<section class="section section--subtle" id="payroll">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Payroll Compliance by Jurisdiction</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for j in ['India — PF / ESI / TDS', 'Australia — STP / Super', 'United States — Federal & State', 'Canada — CRA Payroll', 'New Zealand — PAYE / KiwiSaver', 'South Africa — PAYE / UIF', 'United Kingdom — PAYE / NIC'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ j }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">Payroll Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Payroll Services</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Payroll is one of the most critical and sensitive functions in any organisation. It requires precision, confidentiality, timely execution, and strict compliance with country-specific regulations. Our Payroll Services help businesses manage employee payments and related obligations across multiple jurisdictions with confidence.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">Payroll compliance varies widely from one country to another. Employers must consider tax withholdings, statutory contributions, benefits, reporting timelines, labour law requirements, and employee classification rules. We also help businesses improve payroll controls, documentation, and reporting processes so that payroll becomes a dependable and scalable operational function.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Multi-jurisdiction payroll processing & calculation', 'Payroll tax registration & compliance', 'Employee pay slips, summaries & annual reporting', 'Superannuation / pension contribution management', 'Leave entitlement & accrual calculation', 'Expatriate & cross-border payroll', 'Payroll system setup & advisory', 'Payroll audits & reconciliation'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0;">
+
+<!-- 9. Tax Advisory & Compliance -->
+<section class="section" id="tax">
+  <div class="container">
+    <div class="grid grid--2" style="align-items:center;gap:4rem;">
+      <div class="reveal reveal--d2" style="order:2;">
+        <div style="background:var(--white);border-radius:var(--r-xl);padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-display);font-weight:700;color:var(--navy);margin-bottom:1rem;">Multi-Jurisdiction Coverage</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for country in ['India — GST/IT', 'Australia — ATO', 'United States — IRS/State', 'Canada — CRA', 'New Zealand — IRD', 'South Africa — SARS', 'United Kingdom — HMRC'] %}
+            <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 1rem;font-size:0.85rem;font-weight:500;color:var(--navy);">{{ country }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <span class="overline">Tax Services</span>
+        <h2 class="h2" style="margin-top:0.75rem;">Tax Advisory &amp; Compliance</h2>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:1rem;">Tax is one of the most important and sensitive areas of business operations. It affects structure, cash flow, profitability, compliance risk, and long-term planning. Our Tax Advisory &amp; Compliance services help businesses manage their obligations across multiple jurisdictions with clarity and discipline.</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">We also help businesses stay organised through compliance calendars, documentation support, and recurring filing processes. Timely tax compliance is critical not only to avoid penalties but also to maintain credibility with regulators, banks, and stakeholders.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+          {% for item in ['Cross-border tax planning & structuring', 'Tax treaty analysis & optimisation', 'Transfer pricing documentation & defence', 'GST / VAT registration & compliance', 'Corporate income tax compliance & filing', 'Withholding tax advisory', 'Tax due diligence for M&A', 'BEPS / Pillar Two impact assessment'] %}
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">{{ item }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact" class="btn btn--primary" style="margin-top:2rem;">Request a Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band__content reveal">
+      <h2 class="cta-band__title">Building Businesses Across Borders</h2>
+      <p class="cta-band__sub">Whether you need assurance, accounting, tax support, corporate advisory, governance, outsourcing, payroll, digital consulting, or expansion advisory — we provide a coordinated and professional service model that helps your business stay compliant, efficient, and ready for growth.</p>
+      <div class="cta-band__actions">
+        <a href="/contact" class="btn btn--outline-white btn--lg">Request an RFP</a>
+        <a href="/about"   class="btn btn--outline-white btn--lg">About Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
