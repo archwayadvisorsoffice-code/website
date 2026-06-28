@@ -1,7 +1,7 @@
 import json
 import os
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, Response
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 
@@ -237,6 +237,73 @@ Submitted via archway.in on {datetime.now().strftime('%d %B %Y, %H:%M')}
 @app.route('/googled334c34ae49f0334.html')
 def google_verification():
     return 'google-site-verification: googled334c34ae49f0334.html'
+
+
+@app.route('/sitemap.xml')
+def sitemap():
+    """Generate dynamic XML sitemap"""
+    pages = []
+    base_url = 'https://www.archwayadvisors.in'
+
+    # Static pages
+    static_pages = [
+        ('/', '1.0', 'daily'),
+        ('/about', '0.8', 'monthly'),
+        ('/why-us', '0.8', 'monthly'),
+        ('/services', '0.9', 'weekly'),
+        ('/countries', '0.9', 'weekly'),
+        ('/blog', '0.9', 'daily'),
+        ('/contact', '0.7', 'monthly'),
+    ]
+
+    for url, priority, changefreq in static_pages:
+        pages.append({
+            'loc': base_url + url,
+            'priority': priority,
+            'changefreq': changefreq,
+        })
+
+    # Country pages
+    for slug in COUNTRY_DATA.keys():
+        pages.append({
+            'loc': f'{base_url}/countries/{slug}',
+            'priority': '0.8',
+            'changefreq': 'monthly',
+        })
+
+    # Blog posts
+    blogs = load_blogs()
+    for blog in blogs:
+        pages.append({
+            'loc': f'{base_url}/blog/{blog["slug"]}',
+            'priority': '0.7',
+            'changefreq': 'monthly',
+        })
+
+    sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    for page in pages:
+        sitemap_xml += '  <url>\n'
+        sitemap_xml += f'    <loc>{page["loc"]}</loc>\n'
+        sitemap_xml += f'    <priority>{page["priority"]}</priority>\n'
+        sitemap_xml += f'    <changefreq>{page["changefreq"]}</changefreq>\n'
+        sitemap_xml += '  </url>\n'
+
+    sitemap_xml += '</urlset>'
+
+    return Response(sitemap_xml, mimetype='application/xml')
+
+
+@app.route('/robots.txt')
+def robots():
+    """Generate robots.txt file"""
+    robots_txt = """User-agent: *
+Allow: /
+
+Sitemap: https://www.archwayadvisors.in/sitemap.xml
+"""
+    return Response(robots_txt, mimetype='text/plain')
 
 
 # ── Run ──────────────────────────────────────────────────────────────────────
