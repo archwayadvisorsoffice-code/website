@@ -234,6 +234,11 @@ Submitted via archway.in on {datetime.now().strftime('%d %B %Y, %H:%M')}
     return render_template('contact.html')
 
 
+@app.route('/googled334c34ae49f0334.html')
+def google_verification():
+    return 'google-site-verification: googled334c34ae49f0334.html'
+
+
 # ── Run ──────────────────────────────────────────────────────────────────────
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
